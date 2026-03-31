@@ -1,0 +1,69 @@
+{
+  "name": "Nexus",
+  "description": "Unified brain connecting multiple MCP services into a Palantir Foundry ontology graph",
+  "object_types": [
+    {
+      "id": "projet",
+      "display_name": "Project",
+      "description": "Software or academic project",
+      "primary_key": "id",
+      "properties": ["id", "name", "description", "status", "platform", "jira_project_key", "repo_url", "figma_file_key", "created_at", "updated_at"]
+    },
+    {
+      "id": "tache",
+      "display_name": "Task",
+      "description": "Jira ticket or manual task",
+      "primary_key": "id",
+      "properties": ["id", "summary", "status", "type", "priority", "created_at", "updated_at", "due_date", "jira_url", "projet_id"]
+    },
+    {
+      "id": "email",
+      "display_name": "Email",
+      "description": "Important indexed email from Gmail",
+      "primary_key": "id",
+      "properties": ["id", "from_addr", "to_addr", "subject", "snippet", "date", "thread_id", "is_read", "labels", "projet_id"]
+    },
+    {
+      "id": "evenement",
+      "display_name": "Event",
+      "description": "Calendar event",
+      "primary_key": "id",
+      "properties": ["id", "title", "date", "time_start", "time_end", "location", "attendees", "is_recurring", "projet_id"]
+    },
+    {
+      "id": "competence",
+      "display_name": "Skill",
+      "description": "Technology or skill (mastered, practiced, theory)",
+      "primary_key": "id",
+      "properties": ["id", "name", "level", "last_used", "context"]
+    },
+    {
+      "id": "echeance",
+      "display_name": "Deadline",
+      "description": "Important deadline (exam, submission, interview)",
+      "primary_key": "id",
+      "properties": ["id", "title", "date", "type", "status", "blockers", "projet_id"]
+    },
+    {
+      "id": "design",
+      "display_name": "Design",
+      "description": "Figma file or component",
+      "primary_key": "id",
+      "properties": ["id", "file_key", "name", "last_modified", "url", "has_comments", "projet_id"]
+    }
+  ],
+  "link_types": [
+    {"id": "appartient-a", "from": "projet", "to": "tache", "cardinality": "ONE_TO_MANY", "description": "Task belongs to project"},
+    {"id": "concerne-email", "from": "projet", "to": "email", "cardinality": "ONE_TO_MANY", "description": "Email concerns project"},
+    {"id": "concerne-evenement", "from": "projet", "to": "evenement", "cardinality": "ONE_TO_MANY", "description": "Event concerns project"},
+    {"id": "a-deadline", "from": "projet", "to": "echeance", "cardinality": "ONE_TO_MANY", "description": "Project has deadline"},
+    {"id": "design-de", "from": "projet", "to": "design", "cardinality": "ONE_TO_MANY", "description": "Design belongs to project"},
+    {"id": "lie-email-tache", "from": "email", "to": "tache", "cardinality": "MANY_TO_MANY", "description": "Email linked to task"},
+    {"id": "lie-evenement-tache", "from": "evenement", "to": "tache", "cardinality": "MANY_TO_MANY", "description": "Event linked to task"},
+    {"id": "utilise", "from": "projet", "to": "competence", "cardinality": "MANY_TO_MANY", "description": "Project uses skill"},
+    {"id": "requiert", "from": "echeance", "to": "competence", "cardinality": "MANY_TO_MANY", "description": "Deadline requires skill"},
+    {"id": "commente-dans", "from": "design", "to": "email", "cardinality": "MANY_TO_MANY", "description": "Design commented in email"},
+    {"id": "bloque", "from": "tache", "to": "tache", "cardinality": "MANY_TO_MANY", "description": "Task blocks task"},
+    {"id": "manage-par", "from": "tache", "to": "evenement", "cardinality": "MANY_TO_MANY", "description": "Task managed in meeting"}
+  ]
+}

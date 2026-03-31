@@ -6,3 +6,5 @@ output/
 .claude/
 data-tmp/
 excalidraw.log
+*.db
+*.log

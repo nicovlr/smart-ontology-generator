@@ -1,0 +1,8 @@
+id,summary,status,type,priority,created_at,updated_at,due_date,jira_url,projet_id
+ALPHA-1,Improve input bar UX,To do,Story,Medium,2026-03-30,2026-03-30,,,proj-alpha
+ALPHA-2,Fix navigation bug on tablet,In progress,Bug,High,2026-03-28,2026-03-30,,,proj-alpha
+ALPHA-3,Add audio transcription,In progress,Story,Medium,2026-03-27,2026-03-30,,,proj-alpha
+ALPHA-4,Search bar for daily teams,To do,Story,Medium,2026-03-26,2026-03-30,,,proj-alpha
+ALPHA-5,Refactor state management,Done,Story,Low,2026-03-20,2026-03-25,,,proj-alpha
+DELTA-1,Setup CI/CD pipeline,In progress,Task,High,2026-02-22,2026-02-22,,,proj-delta
+DELTA-2,Database migration script,To do,Task,Medium,2026-02-22,2026-02-22,2026-03-04,,proj-delta

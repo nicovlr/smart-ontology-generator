@@ -1,0 +1,5 @@
+id,name,description,status,platform,jira_project_key,repo_url,figma_file_key,created_at,updated_at
+proj-alpha,Project Alpha,Mobile app for field operations,active,iOS,ALPHA,,,2026-01-15,2026-03-30
+proj-beta,Project Beta,E-commerce platform,paused,Web,,,2025-09-01,2026-03-15
+proj-gamma,Project Gamma,IoT device manager,active,Raspberry Pi + Python,,,,2026-02-01,2026-03-20
+proj-delta,Project Delta,Internal web tool,active,Web (Python/Node),,,,2026-01-01,2026-03-28

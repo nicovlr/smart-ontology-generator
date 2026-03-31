@@ -1,0 +1,6 @@
+id,name,level,last_used,context
+skill-swift,Swift,mastered,2026-03-30,Mobile app development
+skill-python,Python,mastered,2026-03-28,Backend services
+skill-docker,Docker,practiced,2026-03-15,Deployment
+skill-react,React,practiced,2026-03-28,Web frontend
+skill-rag,RAG Pipeline,theory,2026-03-15,Interview preparation
