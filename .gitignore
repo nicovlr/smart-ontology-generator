@@ -1,0 +1,8 @@
+__pycache__/
+*.pyc
+output/
+.mcp.json
+.env
+.claude/
+data-tmp/
+excalidraw.log
